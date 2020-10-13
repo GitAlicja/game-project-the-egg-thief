@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+  <title>Help the Fox catching Eggs!</title>
+</head>
+
+<body>
+  <h1>The Egg Thief</h1>
+  <div class="main-container">
+    <div class="explanation">
+      <!--game explanation-->
+      <span>Use the left and right arrow to move the fox!</span>
+      <div class="arrows">
+        <!--arrows-->
+        <img src="/images/left-arrow-red.png" alt="left arrow red" />
+        <img src="/images/right-arrow-red.png" alt="right arrow red" />
+      </div>
+
+    </div>
+    <div>
+      <canvas id="fox-catching-eggs" width="800px" height="600px"></canvas>
+    </div>
+    <div class="points-counter">
+      <!--points counter-->
+      <span>Your score</span>
+      <div id="score">0</div>
+      <!--number of points-->
+    </div>
+  </div>
+
+  <button id="start-button">Start game</button>
+  <!--never ever use <div> and <span> to build a button which is responsible for an action on the page-->
+  <footer>
+    <ul>
+      <li>Hand vector created by freepik - <a href='https://www.freepik.com/vectors/hand' rel="nofollow"
+          target="_blank">www.freepik.com</a></li>
+      <li>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="nofollow"
+          target="_blank">Freepik</a>
+        from <a href="https://www.flaticon.com/" title="Flaticon" rel="nofollow" target="_blank">www.flaticon.com</a>
+      </li>
+      <li>Photo by <a href="https://unsplash.com/@nathananderson" rel="nofollow" target="_blank">Nathan Anderson</a> on
+        <a href="https://unsplash.com/" rel="nofollow" target="_blank">Unsplash</a></li>
+    </ul>
+    <p>Music by Ahjay Stelino on <a href="https://mixkit.co/" rel="nofollow" target="_blank">mixkit</a></p>
+
+    <audio id="background-music" src="/music/mixkit-jumping-around-8.mp3" type="audio/mpeg" controls>
+      <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    </audio>
+
+
+  </footer>
+
+
+  <div id="cover-together" hidden="true">
+    <div class="cover-window"></div>
+    <div class="middle-cover-window">
+      <p>Insert your name and start catching eggs!</p>
+      <input id="user-name" type="text" placeholder=" Your name">
+      <button id="catch-button">Catch them all</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/canvas.js"></script>
+  <script type="text/javascript" src="js/game-logic.js"></script>
+</body>
+
+</html>

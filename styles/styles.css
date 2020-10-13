@@ -1,0 +1,264 @@
+canvas {
+  background-color: white;
+  border-radius: 2%;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+  background-image: url(/images/nathan-anderson-night-sky-unsplash.jpg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.explanation,
+.points-counter {
+  width: 200px;
+  height: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2B171F;
+}
+
+.explanation>span {
+  font-size: 1.3em;
+  letter-spacing: 0.12em;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+
+.points-counter>span {
+  font-size: 1.9em;
+  letter-spacing: 0.12em;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+
+#score {
+  font-size: 6.9em;
+  color: #ED494B;
+  margin-top: 25px;
+}
+
+#start-button {
+  width: 180px;
+  height: 60px;
+  box-sizing: border-box;
+  background-color: #ED494B;
+  border-radius: 4%;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* to remove the blue outline around the button when clicked*/
+#start-button:focus {
+  outline: none;
+}
+
+#start-button[disabled] {
+  opacity: 0.5;
+  cursor: initial;
+}
+
+h1 {
+  margin: 15px;
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.arrows {
+  margin-top: 20px;
+}
+
+.arrows>img {
+  width: 45px;
+}
+
+footer {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul li {
+  color: white;
+  letter-spacing: 0.05em;
+  margin-left: 1.5rem;
+  font-size: 1.4em;
+  position: relative;
+}
+
+ul li::before {
+  color: white;
+  content: '\00B7';
+  font-size: 2em;
+  vertical-align: middle;
+  padding-right: .5rem;
+  position: absolute;
+  top: -.25em;
+  left: -1rem
+}
+
+ul li:first-child::before {
+  display: none;
+}
+
+footer p {
+  color: white;
+  letter-spacing: 0.05em;
+  margin-left: 1.5rem;
+  font-size: 1.4em;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+audio {
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: 40px;
+}
+
+audio:focus {
+  outline: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: #ED494B;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #ED494B;
+}
+
+.cover-window {
+  width: 100vw;
+  height: 100%;
+  background-color: #2B171F;
+  position: absolute;
+  opacity: 0.86;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.middle-cover-window {
+  width: 800px;
+  height: 600px;
+  background-color: white;
+  border-radius: 2%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 100;
+  top: calc(50% - 340px);
+  left: calc(50% - 400px);
+  box-shadow: 2px 2px 20px black;
+}
+
+.middle-cover-window p {
+  margin: 0 auto;
+  font-size: 2.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2B171F;
+}
+
+#user-name {
+  width: 260px;
+  height: 60px;
+  margin: 40px auto;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  color: #2B171F;
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#user-name:focus {
+  outline-color: #ED494B;
+}
+
+#catch-button {
+  width: 220px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+  background-color: #ED494B;
+  color: white;
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4%;
+  cursor: pointer;
+}
+
+/* to remove the blue outline around the button when clicked*/
+#catch-button:focus {
+  outline: none;
+}
+
+
