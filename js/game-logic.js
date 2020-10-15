@@ -18,7 +18,7 @@ class GameState {
         this.eggs = [];
         this.score = 0;
         this.leftChances = 5;
-        this.speed = 170;
+        this.speed = 130;
         this.userName = userName;
     }
 }
@@ -102,6 +102,10 @@ class GameLogic {
             this.state.eggs.push(new Egg(Math.round(Math.random()))); // to randomly decide where the next egg will appear
         }
 
+        if (this.state.score >= 20 && this.state.eggs.filter(egg => egg.position === 4).length > 0) {
+            this.state.eggs.push(new Egg(Math.round(Math.random()))); // 2nd level: 2 eggs falling down in the same moment 
+        }
+
     }
 
     countPoints() {
@@ -110,7 +114,7 @@ class GameLogic {
             .filter(egg => egg.position === 6) // to filter eggs on the pos 6
             .forEach(egg => {
                 if ((this.state.basket.position === 0 && egg.perchNum === 0) || (this.state.basket.position === 1 && egg.perchNum === 1)) {
-                    this.state.score += 1;
+                    this.state.score++;
 
                     const eggIndex = this.state.eggs.indexOf(egg);
                     this.state.eggs.splice(eggIndex, 1); // to delete the egg which was catched and should not be visible anymore 
@@ -120,25 +124,22 @@ class GameLogic {
 
         this.state.eggs
             .filter(egg => egg.position === 8) // to filter eggs on the pos 8
-            .forEach(egg => {
-                this.state.leftChances -= 1; // to be changed in advanced version
-
-            });
+            .forEach(egg => this.state.leftChances--); // to be changed in advanced version
 
     }
 
     updateSpeed() {
 
-        if (this.state.score == 4) {
+        if (this.state.score == 7) {
             this.state.speed = 120;
             window.clearInterval(this.intervalID);
             this.intervalID = setInterval(() => this.progress(), this.state.speed);
-        } else if (this.state.score == 9) {
-            this.state.speed = 80;
+        } else if (this.state.score == 15) {
+            this.state.speed = 110;
             window.clearInterval(this.intervalID);
             this.intervalID = setInterval(() => this.progress(), this.state.speed);
-        } else if (this.state.score == 13) {
-            this.state.speed = 60;
+        } else if (this.state.score == 25) {
+            this.state.speed = 100;
             window.clearInterval(this.intervalID);
             this.intervalID = setInterval(() => this.progress(), this.state.speed);
         }
@@ -146,7 +147,7 @@ class GameLogic {
 
 
     checkTheWinner() {
-        if (this.state.score === 30) {
+        if (this.state.score === 50) {
             this.stopKeyEvents();
             window.clearInterval(this.intervalID);
             this.drawState(); // it cac but it doesn't have to be here
@@ -186,38 +187,3 @@ document.getElementById('catch-button').addEventListener('click', () => {
     // this will set the attribute but will not play
     new GameLogic(userName);
 });
-
-
-
-/*
-
-new ideas
-> local storage
-> eggs coming from left and right perch at the same time
-
-
-// for moving the eggs, to add inside the startGame() method
-
-setInterval()
-what to update (every half second):
-- egg position
-- score (it doesn't have to but it can change within set time)
-- number of broken eggs (chances)
-- redraw canva
-
-
-let intervalID = setInterval(this.moveEggs, 500); // in the moveEggs() "this" wird auf Window object gesetzt
-
-let intervalID = setInterval(() => this.moveEggs(), 500);
-
-// "this" gesetzt auf den Kontext, wo die Funktion aufgerufen wird
-// eine Besonderheit der Arrow Function
-
-// same but longer code
-
-let intervalID = setInterval(() => {
-    this.moveEggs();
-}, 500);
-
-
-*/

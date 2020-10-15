@@ -90,7 +90,7 @@ body {
   cursor: pointer;
 }
 
-/* to remove the blue outline around the button when clicked*/
+/* to remove the blue outline around the button when clicked */
 #start-button:focus {
   outline: none;
 }
@@ -256,7 +256,7 @@ a:visited {
   cursor: pointer;
 }
 
-/* to remove the blue outline around the button when clicked*/
+/* to remove the blue outline around the button when clicked */
 #catch-button:focus {
   outline: none;
 }
