@@ -1,6 +1,6 @@
-# Game project: The Egg Thief
+# WebDev Project: The Egg Thief
 
-My game project written in HTML, CSS and JavaScript. Project written to complete the first module (WebDev) at Ironhack Berlin.
+Project written to complete the first module (WebDev) at Ironhack Berlin. It's a simple game built with Canvas 2D and deployed on Netlify. To win, the player must help the fox to rob the chickens by collecting 50 eggs. 
 
 Tech stack: HTML, CSS and JavaScript
 
